@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics }}"></script>
+   <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ google_analytics }}');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="icon" href="{% static 'covid19_home/images/corona.png' %}">
+    <link rel="stylesheet" href="{% static 'covid19_sections/sections.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    {% if title %}
+        <title>COVID-19: {{ title }}</title>
+    {% else %}
+        <title>Debunking Myths about COVID-19</title>
+    {% endif %}
+</head>
+<body>
+    {#  Nav  #}
+    <div class="nav">
+        <a href="{% url 'covid19-home' %}"><i class="fas fa-home fa-2x"></i></a>
+        <a class="envelope" href="{% url 'covid19-contact' %}"><i class="fas fa-2x fa-envelope"></i></a>
+    </div>
+    <div class="message">Hey there! To help our content grow, we are inviting contributions from our readers. If there
+                         are {{ message }} that you would like us to include, please get in touch via the contact link above
+                         or in the footer.
+    </div>
+
+    {#  Page heading  #}
+    <h1 class="section-heading">
+        {{ heading }}
+    </h1>
+
+    {#  Page content  #}
+    {% block content %}{% endblock %}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'covid19_sections/sections.js' %}"></script>
+</body>
+{#  Footer  #}
+<footer class="footer">
+    <div class="footer-inner">
+        Made with <img class="img-footer" src="{% static 'covid19_home/images/love.ico' %}" alt=""> in Bangalore ⋅
+        <a href="{% url 'covid19-contact' %}"><i class="fas fa-envelope"></i></a>
+    </div>
+</footer>
+</html>

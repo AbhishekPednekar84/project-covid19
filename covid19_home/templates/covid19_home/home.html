@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics }}"></script>
+   <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ google_analytics }}');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="{% static 'covid19_home/images/corona.png' %}">
+    <link rel="stylesheet" href="{% static 'covid19_home/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <title>COVID-19</title>
+</head>
+<body>
+    {#  Main image  #}
+    <div class="main-image">
+        <div class="ptext">
+            <p class="border">
+                Coronavirus
+            </p>
+            <br/>
+            <p class="border">
+                Learn the facts, dispel the myths
+            </p>
+        </div>
+    </div>
+
+    {#  General information section  #}
+    <section class="intro-section">
+        <p>
+            Since the first reported case of the novel coronavirus (COVID-19) in Wuhan, China in December 2019,
+            the disease, now declared a pandemic by the WHO has rapidly spread to over a hundred countries. With thousands
+            of deaths across the globe, humanity is once again faced with the outbreak of a disease that does not yet have a known vaccine and can
+            only be treated symptomatically. While brilliant medical minds across the globe come together to find a
+            cure, we as citizens have an equal responsibility to do what is needed to help. The advent of social media
+            has meant that we have abundant information at our fingertips. While that is not a bad thing, unfortunately,
+            social platforms are also being used to propagate false information about COVID-19 causing panic, stress
+            and social stigma. This website aims to dispel fake news about the coronavirus and list important facts
+            sourced from WHO, CDC and other prominent bodies.
+        </p>
+        <br/>
+        <p>
+            It is imperative that we trust only reliable sources of information like the WHO and government-run sites and
+            not fall victims to fake news circulated on social media. To put things into perspective, thus far, the
+            mortality rate of COVID-19 is far less than most other diseases. There are known cases of patients being
+            completely cured with the help of symptomatic treatments. Therefore, let us be sensible, aware and sensitive
+            and do what we can to help each other in this time of need.
+        </p>
+    </section>
+
+    {#  Cards  #}
+    <section class="cards">
+        <div>
+            <img src="{% static 'covid19_home/images/facts.jpg' %}" alt="facts" />
+            <h3>Facts</h3>
+            <p>Essential facts about COVID-19</p>
+            <a href="{% url 'covid19-section-facts' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div>
+            <img src="{% static 'covid19_home/images/myth.jpg' %}" alt="myths" />
+            <h3>Myths</h3>
+            <p>Let's bust some myths about COVID-19!</p>
+            <a href="{% url 'covid19-section-myths' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div>
+            <img src="{% static 'covid19_home/images/prevention.jpg' %}" alt="prevention" />
+            <h3>Prevention</h3>
+            <p>How do I stay safe?</p>
+            <a href="{% url 'covid19-section-prevention' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
+        </div>
+        <div>
+            <img src="{% static 'covid19_home/images/news.jpg' %}" alt="news" />
+            <h3>Information</h3>
+            <p>Some useful resources and information </p>
+            <a href="{% url 'covid19-section-information' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </section>
+
+    {#  Footer  #}
+    <footer class="footer">
+        <div class="footer-inner">
+            Sources - <a href="https://www.who.int/">WHO</a> ⋅ <a href="https://www.ecdc.europa.eu/en/">ECDC</a> ⋅
+            <a href="https://www.cdc.gov">CDC</a> ⋅ CNA<br />
+            Made with <img class="img-footer" src="{% static 'covid19_home/images/love.ico' %}" alt="footer"> in Bangalore
+        </div>
+    </footer>
+</body>
+</html>

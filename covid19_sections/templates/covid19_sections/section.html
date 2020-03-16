@@ -1,0 +1,12 @@
+{% extends "covid19_sections/base.html" %}
+{% block content %}
+    {% for detail in details %}
+        <div id="section{{ forloop.counter }}" class="section">
+            <h4>{{ detail.question }}<i class="fas fa-chevron-down"></i></h4>
+            <p>{{ detail.answer|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+    <p class="source">
+        Information courtesy: {{ source }}
+    </p>
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics }}"></script>
+   <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ google_analytics }}');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="icon" href="{% static 'covid19_home/images/corona.png' %}">
+    <link rel="stylesheet" href="{% static 'covid19_emails/contact.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <title>Contact</title>
+</head>
+<body>
+    {#  Nav  #}
+    <div class="nav">
+        <a href="{% url 'covid19-home' %}"><i class="fas fa-home fa-2x"></i></a>
+    </div>
+
+    <p class="contact-message">
+        Hey there! If you would like to submit any corrections, facts, myths or prevention measures, please send them to
+        us using the contact form. Do not forget to include your source (preferably a link) as that would help us validate
+        the information prior to posting. Thanks!
+    </p>
+
+    <h1 class="section-heading">Contact Us</h1>
+
+    <div class="form-content">
+
+        <form method="post" action="">
+            {% csrf_token %}
+            <fieldset>
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                {{ form.as_p }}
+                <div>
+                    <button class="submit type="submit"><i class="fab fa-2x fa-telegram-plane"></i></button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            Made with <img class="img-footer" src="{% static 'covid19_home/images/love.ico' %}" alt=""> in Bangalore
+        </div>
+    </footer>
+</body>
+</html>
