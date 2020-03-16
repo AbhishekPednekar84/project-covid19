@@ -17,7 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path("admin/", include("admin_honeypot.urls", namespace="admin_honeypot")),
+    path("update_this/", admin.site.urls),
     path("", include("covid19_home.urls")),
     path("", include("covid19_sections.urls")),
     path("", include("covid19_emails.urls")),

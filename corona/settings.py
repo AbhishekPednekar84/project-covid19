@@ -28,7 +28,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = [""]
 
 
 # Application definition
@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "covid19_home.apps.Covid19HomeConfig",
     "covid19_sections.apps.Covid19SectionsConfig",
     "covid19_emails.apps.Covid19EmailsConfig",
+    "django_admin_env_notice",
+    "admin_honeypot",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -68,10 +70,20 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "django_admin_env_notice.context_processors.from_settings",
             ]
         },
     }
 ]
+
+# django-admin-env-notice
+ENVIRONMENT_NAME = "Development Server"
+ENVIRONMENT_COLOR = "#1EB2A6"
+
+# ENVIRONMENT_NAME = 'Production Server'
+# ENVIRONMENT_COLOR = '#54123B'
+
+ENVIRONMENT_FLOAT = True
 
 WSGI_APPLICATION = "corona.wsgi.application"
 
@@ -100,6 +112,17 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"
     },
 ]
+
+# Security settings for production
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_SSL_REDIRECT = True
+# SECURE_HSTS_SECONDS = 86400  # 1 day
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+# SECURE_REFERRER_POLICY = "origin"
 
 
 # Internationalization
