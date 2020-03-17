@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics }}"></script>
+   <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '{{ google_analytics }}');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta itemscope itemtype="https://schema.org/InfectiousDisease" itemprop="infectiousAgent" name="description"
+          content="Facts, myths and preventive measures related to the ongoing coronavirus pandemic">
+    <link rel="icon" href="{% static 'covid19_home/images/corona.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'covid19_sections/sections.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    {% if title %}
+        <title>COVID-19: Helplines for {{ country }}</title>
+    {% else %}
+        <title>Debunking Myths about COVID-19</title>
+    {% endif %}
+</head>
+<body>
+
+    {#  Nav  #}
+    <div class="nav">
+        <a href="{% url 'covid19-home' %}"><i class="fas fa-home fa-2x"></i></a>
+        <a class="envelope" href="{% url 'covid19-contact' %}"><i class="fas fa-2x fa-envelope"></i></a>
+    </div>
+
+    <h1 class="section-heading">Helplines - <span class="country-name">{{ country }}</span></h1>
+
+    <div class="national-info">
+        <div class = "national-number">
+            <h4>Central Helpline Number</h4>
+            <p class="country-name">{{ national_helpline }}</p>
+        </div>
+
+        <div class="national-email">
+            <h4>Central Helpline Email</h4>
+            <p class="country-name">{{ national_email }}</p>
+        </div>
+    </div>
+
+    <div class="table-display">
+        <div class="country-table">
+            {% for detail in details %}
+            <div class="country-table-row-group">
+                <div class="country-table-cell">
+                    {{ forloop.counter }}
+                </div>
+                <div class="country-table-cell">
+                    {{ detail.state }}
+                </div>
+                <div class="country-table-cell">
+                    {{ detail.helpline }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <p class="source">
+        Information courtesy: {{ source }}
+    </p>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'covid19_sections/helplines.js' %}"></script>
+</body>
+<footer class="footer">
+    <div class="footer-inner">
+        Made with <img class="img-footer" src="{% static 'covid19_home/images/love.ico' %}" alt=""> in Bangalore ⋅
+        <a href="{% url 'covid19-contact' %}"><i class="fas fa-envelope"></i></a>
+    </div>
+</footer>
+</html>

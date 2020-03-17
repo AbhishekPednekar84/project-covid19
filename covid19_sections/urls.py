@@ -6,4 +6,9 @@ urlpatterns = [
     path("myths/", views.myths, name="covid19-section-myths"),
     path("prevention/", views.prevention, name="covid19-section-prevention"),
     path("information/", views.information, name="covid19-section-information"),
+    path(
+        "helplines/<str:country>",
+        views.helplines,
+        name="covid19-section-helplines",
+    ),
 ]

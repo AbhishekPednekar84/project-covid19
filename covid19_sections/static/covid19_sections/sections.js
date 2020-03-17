@@ -24,6 +24,4 @@ $(document).ready(function() {
              $(".message").delay(500).hide(500);
         })
     })
-
-
 });

@@ -39,8 +39,8 @@
         <div>
             <img src="{% static 'covid19_sections/images/india.jpg' %}" alt="india" />
             <h3>India</h3>
-            <p>Helplines and testing centers</p>
-            <a target="_blank" href="{% static 'covid19_sections/misc/COVID-19-India.pdf' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
+            <p>Helpline numbers</p>
+            <a href="{% url 'covid19-section-helplines' 'india' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
             <img src="{% static 'covid19_sections/images/mask.jpg' %}" alt="myths" />
@@ -67,7 +67,7 @@
             <img src="{% static 'covid19_sections/images/canada.jpg' %}" alt="canada" />
             <h3>Canada</h3>
             <p>Helpline numbers</p>
-            <a target="_blank" href="{% static 'covid19_sections/misc/COVID-19-Canada.pdf' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
+            <a href="{% url 'covid19-section-helplines' 'canada' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
     </section>
 
