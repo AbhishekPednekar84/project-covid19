@@ -6,6 +6,7 @@
 
 body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
     font-size: 18px;
     /*font-family: "Lato", sans-serif;*/
@@ -109,7 +110,7 @@ body, html {
 }
 
 /* Media Queries */
-@media(max-width: 700px) {
+@media(max-width: 800px) {
 
     .main-image {
         background-attachment: scroll;
@@ -120,6 +121,7 @@ body, html {
     }
 
     .ptext {
+        top: 40%;
         font-size: 18px;
         word-spacing: 1px;
         overflow-wrap: break-word;

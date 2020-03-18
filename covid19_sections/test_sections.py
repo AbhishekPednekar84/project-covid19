@@ -1,7 +1,7 @@
 import pytest
 from django.urls import reverse, resolve
 from django.test import RequestFactory, TestCase
-from .views import facts, myths, prevention, information
+from .views import facts, myths, prevention, information, helplines
 from .models import Fact, Myth, Prevention
 from mixer.backend.django import mixer
 
@@ -86,3 +86,21 @@ class InformationTests(TestCase):
 
     def test_information_view(self):
         assert resolve(self.path).view_name == "covid19-section-information"
+
+
+@pytest.mark.django_db
+class HelplineTests(TestCase):
+    @classmethod
+    def setUpClass(cls):
+        super(HelplineTests, cls).setUpClass()
+        cls.path = reverse(
+            "covid19-section-helplines", kwargs={"country": "india"}
+        )
+
+    def test_helpline_page(self):
+        request = RequestFactory().get(self.path)
+        response = helplines(request, country="india")
+        assert response.status_code == 200
+
+    def test_helpline_view(self):
+        assert resolve(self.path).view_name == "covid19-section-helplines"
