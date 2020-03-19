@@ -4,7 +4,7 @@
 
 Version of Python used - **3.7**
 
-**Steps to create a local setup** -
+**Steps to create a local setup**
 1. Clone the repository - `git clone https://github.com/AbhishekPednekar84/project-covid19`
 2. Create a virtual environment - `python -m venv venv`
 3. Activate the virtual environment - `venv\Sctipts\activate.bar` (Windows), `source venv/bin/activate` (OSx / Linux)
@@ -16,7 +16,7 @@ Version of Python used - **3.7**
    - `python manage.py migrate`
 8. Run the application - `python manage.py runserver`
 
-**To send emails with the local setup (tested on Ubuntu 18.04)** -
+**To send emails with the local setup (tested on Ubuntu 18.04)**
 1. Install redis - `sudo apt install redis-server`
 2. Run the redis instance - `sudo service redis-server start`
 3. Update the `CELERY_BROKER_URL` environment variable in the `.env` file - `redis://localhost:6379`
