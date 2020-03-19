@@ -1,6 +1,6 @@
 ## [Corona Myth Busters](https://www.coronamythbusters.com)
 
-[![Build Status](https://travis-ci.org/AbhishekPednekar84/project-covid19.svg?branch=master)](https://travis-ci.org/AbhishekPednekar84/project-covid19) [![Coverage Status](https://coveralls.io/repos/github/AbhishekPednekar84/project-covid19/badge.svg?branch=master)](https://coveralls.io/github/AbhishekPednekar84/project-covid19?branch=master) 
+[![Build Status](https://travis-ci.org/AbhishekPednekar84/project-covid19.svg?branch=master)](https://travis-ci.org/AbhishekPednekar84/project-covid19) [![Coverage Status](https://coveralls.io/repos/github/AbhishekPednekar84/project-covid19/badge.svg)](https://coveralls.io/github/AbhishekPednekar84/project-covid19)
 
 Version of Python used - **3.7**
 
