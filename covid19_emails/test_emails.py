@@ -17,3 +17,17 @@ class ContactTests(TestCase):
 
     def test_contact_view(self):
         assert resolve(self.path).view_name == "covid19-contact"
+
+    def test_send_email_with_invalid_email_address(self):
+        request = RequestFactory().post(
+            self.path,
+            data={
+                "from_name": "John Doe",
+                "from_email": "JD.com",
+                "category": "1",
+                "link": "test link",
+                "message": "test message",
+            },
+        )
+        response = contact(request)
+        assert b"Enter a valid email address." in response.content
