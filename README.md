@@ -2,7 +2,9 @@
 
 [![Build Status](https://travis-ci.org/AbhishekPednekar84/project-covid19.svg?branch=master)](https://travis-ci.org/AbhishekPednekar84/project-covid19) [![Coverage Status](https://coveralls.io/repos/github/AbhishekPednekar84/project-covid19/badge.svg?branch=master)](https://coveralls.io/github/AbhishekPednekar84/project-covid19?branch=master)
 
-Version of Python used - **3.7**
+**Versions** 
+1. Python - **3.7**
+2. Django - **3.0**
 
 **Steps to create a local setup**
 1. Clone the repository - `git clone https://github.com/AbhishekPednekar84/project-covid19`
