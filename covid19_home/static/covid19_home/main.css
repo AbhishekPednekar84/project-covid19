@@ -48,6 +48,18 @@ body, html {
     margin: auto;
 }
 
+/* Message - lockdown*/
+.message {
+    width: 90%;
+    margin: 30px auto auto auto;
+    padding: 20px;
+    color: #b80d57;
+    border: 1px dotted #721b65;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.5;
+}
+
 /* Intro Section */
 .intro-section {
     text-align: justify;
