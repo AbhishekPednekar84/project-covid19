@@ -76,6 +76,10 @@ body, html {
     margin: 40px 20px;
 }
 
+.cards div {
+    box-shadow: 2px 7px #ededed;
+}
+
 .cards img {
     width: 100%;
     margin-bottom: 10px;
@@ -93,6 +97,7 @@ body, html {
     font-weight: bold;
     text-decoration: none;
     font-size: 15px;
+    margin-bottom: 15px;
 }
 
 .cards a:hover i {
@@ -119,6 +124,10 @@ body, html {
 .img-footer {
     height: 16px;
     width: 16px;
+}
+
+.fa-heart {
+    color: red;
 }
 
 /* Media Queries */

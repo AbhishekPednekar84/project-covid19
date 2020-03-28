@@ -70,25 +70,25 @@
     {#  Cards  #}
     <section class="cards">
         <div>
-            <img src="{% static 'covid19_home/images/facts.jpg' %}" alt="facts" />
+            <img src="{% static 'covid19_home/images/facts.webp' %}" onerror="this.src='{% static 'covid19_home/images/facts.jpg' %}'" alt="facts"/>
             <h3>Facts</h3>
             <p>Essential facts about COVID-19</p>
             <a href="{% url 'covid19-section-facts' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_home/images/myth.jpg' %}" alt="myths" />
+            <img src="{% static 'covid19_home/images/myth.webp' %}" onerror="this.src='{% static 'covid19_home/images/myth.jpg' %}'" alt="myths" />
             <h3>Myths</h3>
             <p>Let's bust some myths about COVID-19!</p>
             <a href="{% url 'covid19-section-myths' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_home/images/prevention.jpg' %}" alt="prevention" />
+            <img src="{% static 'covid19_home/images/prevention.webp' %}" onerror="this.src='{% static 'covid19_home/images/prevention.jpg' %}'" alt="prevention" />
             <h3>Prevention</h3>
             <p>How do I stay safe?</p>
             <a href="{% url 'covid19-section-prevention' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_home/images/news.jpg' %}" alt="news" />
+            <img src="{% static 'covid19_home/images/news.webp' %}" onerror="this.src='{% static 'covid19_home/images/news.jpg' %}'" alt="information" />
             <h3>Information</h3>
             <p>Some useful resources and information </p>
             <a href="{% url 'covid19-section-information' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
@@ -100,7 +100,7 @@
         <div class="footer-inner">
             Sources - <a href="https://www.who.int/">WHO</a> ⋅ <a href="https://www.ecdc.europa.eu/en/">ECDC</a> ⋅
             <a href="https://www.cdc.gov">CDC</a> ⋅ CNA<br />
-            Made with <img class="img-footer" src="{% static 'covid19_home/images/love.ico' %}" alt="footer"> in Bangalore
+            Made with <i class="fa fa-heart"></i> in Bangalore
         </div>
     </footer>
 </body>

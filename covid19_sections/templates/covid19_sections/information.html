@@ -35,48 +35,63 @@
     </div>
 
     {#  Cards  #}
+    {#  jpg images are for Safari as the browser dows not support webp  #}
     <section class="info-cards">
         <div>
-            <img src="{% static 'covid19_sections/images/mask.jpg' %}" alt="myths" />
+            <img src="{% static 'covid19_sections/images/mask.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/mask.jpg' %}'"
+                 alt="myths" />
             <h3>Masks</h3>
             <p>When and how to use them</p>
             <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks">
                 LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_sections/images/workplace.jpg' %}" alt="prevention" />
+            <img src="{% static 'covid19_sections/images/workplace.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/workplace.jpg' %}'"
+                 alt="prevention" />
             <h3>Workplace Readiness</h3>
             <p>Workplace safety guidelines issued by the WHO</p>
             <a target="_blank" href="https://www.who.int/docs/default-source/coronaviruse/getting-workplace-ready-for-covid-19.pdf?sfvrsn=359a81e7_6">
                 LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_sections/images/doctors.jpg' %}" alt="doctors" />
+            <img src="{% static 'covid19_sections/images/doctors.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/doctors.jpg' %}'"
+                 alt="doctors" />
             <h3>Health Workers</h3>
             <p>Roles, responsibility and guidelines issued by the WHO</p>
             <a target="_blank" href="https://www.who.int/docs/default-source/coronaviruse/who-rights-roles-respon-hw-covid-19.pdf?sfvrsn=bcabd401_0">
                 LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_sections/images/india.jpg' %}" alt="india" />
+            <img src="{% static 'covid19_sections/images/india.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/india.jpg' %}'"
+                 alt="india" />
             <h3>India</h3>
             <p>Helpline numbers</p>
             <a href="{% url 'covid19-section-helplines' 'india' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_sections/images/australia.jpg' %}" alt="usa" />
-            <h3>Australia</h3>
+            <img src="{% static 'covid19_sections/images/australia.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/australia.jpg' %}'"
+                 alt="usa" />
+            <h3>Australia </h3>
             <p>Helpline numbers</p>
             <a href="{% url 'covid19-section-helplines' 'australia' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_sections/images/canada.jpg' %}" alt="canada" />
+            <img src="{% static 'covid19_sections/images/canada.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/canada.jpg' %}'"
+                 alt="canada" />
             <h3>Canada</h3>
             <p>Helpline numbers</p>
             <a href="{% url 'covid19-section-helplines' 'canada' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-            <img src="{% static 'covid19_sections/images/usa.jpg' %}" alt="usa" />
+            <img src="{% static 'covid19_sections/images/usa.webp' %}"
+                 onerror="this.src='{% static 'covid19_sections/images/usa.jpg' %}'"
+                 alt="usa" />
             <h3>USA</h3>
             <p>Helpline numbers</p>
             <a href="{% url 'covid19-section-helplines' 'united states of america' %}">LEARN MORE <i class="fas fa-chevron-right"></i></a>
@@ -93,7 +108,7 @@
 
     <footer class="footer">
         <div class="footer-inner">
-            Made with <img class="img-footer" src="{% static 'covid19_home/images/love.ico' %}" alt=""> in Bangalore ⋅
+            Made with <i class="fa fa-heart"></i> in Bangalore ⋅
             <a href="{% url 'covid19-contact' %}"><i class="fas fa-envelope"></i></a>
         </div>
     </footer>
