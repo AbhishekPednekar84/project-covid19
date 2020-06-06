@@ -4,7 +4,7 @@
 
 **Versions** 
 1. Python - **3.7**
-2. Django - **3.0**
+2. Django - **3.0.7**
 
 **Steps to create a local setup**
 1. Clone the repository - `git clone https://github.com/AbhishekPednekar84/project-covid19`
